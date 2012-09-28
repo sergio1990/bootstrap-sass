@@ -84,7 +84,9 @@
   * ============== */
 
   $(function () {
-    $('body').on('click.alert.data-api', dismiss, Alert.prototype.close)
+    document.addEventListener("page:change", function() {
+      $('body').on('click.alert.data-api', dismiss, Alert.prototype.close)
+    });
   })
 
 }(window.jQuery);

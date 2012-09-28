@@ -289,12 +289,14 @@
   * ================== */
 
   $(function () {
-    $('body').on('focus.typeahead.data-api', '[data-provide="typeahead"]', function (e) {
-      var $this = $(this)
-      if ($this.data('typeahead')) return
-      e.preventDefault()
-      $this.typeahead($this.data())
-    })
+    document.addEventListener("page:change", function() {
+      $('body').on('focus.typeahead.data-api', '[data-provide="typeahead"]', function (e) {
+        var $this = $(this)
+        if ($this.data('typeahead')) return
+        e.preventDefault()
+        $this.typeahead($this.data())
+      })
+    });
   })
 
 }(window.jQuery);

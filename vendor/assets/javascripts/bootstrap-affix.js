@@ -86,7 +86,7 @@
  /* AFFIX DATA-API
   * ============== */
 
-  $(window).on('load', function () {
+  document.addEventListener("page:change load", function() {    
     $('[data-spy="affix"]').each(function () {
       var $spy = $(this)
         , data = $spy.data()
@@ -97,8 +97,8 @@
       data.offsetTop && (data.offset.top = data.offsetTop)
 
       $spy.affix(data)
-    })
-  })
+    });    
+  });
 
 
 }(window.jQuery);
